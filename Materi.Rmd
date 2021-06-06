@@ -1,0 +1,92 @@
+---
+title: "Materi"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 3
+    theme: united
+    highlight: tango
+    number_sections: true
+    css: filewatermark.css
+---
+<div class="watermark"><img src="UIN-Malang.jpg"></div>
+# Langkah pertama, Menginstall package Magick.
+Paket magick menyediakan toolkit modern dan sederhana untuk pemrosesan gambar di R. Ini membungkus ImageMagick STL yang merupakan perpustakaan pemrosesan gambar sumber terbuka paling komprehensif yang tersedia saat ini.<br>
+Pustaka ImageMagick memiliki jumlah fungsionalitas yang luar biasa. Magick mengekspos subset yang layak, tetapi tidak mungkin untuk mendokumentasikan semuanya secara rinci. Artikel ini memperkenalkan beberapa konsep dasar dan contoh untuk memulai.<br>
+Pada Windows atau macOS paket paling mudah diinstal melalui CRAN.<br>
+Paket CRAN biner bekerja di luar kotak dan memiliki fitur yang paling penting diaktifkan. Gunakan magick_config untuk melihat fitur dan format mana yang didukung oleh versi ImageMagick Anda.
+
+```
+install.packages("magick")
+library(magick)
+str(magick::magick_config())
+```
+
+# Langkah Kedua, Membuat Penghubung Antara .Rmd dengan .css
+File ini nantinya digunakan sebagai penghubung antara .rmd dengan css untuk menciptakan watermark pada background halamannya.<br>
+
+## Membuat File CSS
+Untuk scriptnya seperti dibawah ini:<br>
+
+```
+.watermark{
+  opacity:0.2;
+  position: fixed;
+  top:50%;
+  left:50%;
+  font-size:100%;
+  color: #00407d;
+}
+
+```
+
+## Membuat File Rmd
+```
+Untuk scriptnya saya menggunakan seperti dibawah ini:<br>
+title: "Matriks Dalam Pengolahan Gambar"
+author: "Moh. Heri Susanto | UIN Maulana Malik Ibrahim Malang | Teknik Informatika | Dosen Pengampu: Prof. Dr. Suhartono, M.Kom"
+date: 15 Maret 2021
+output:
+  html_document:
+  css: filewatermarkcss.css
+```
+
+# Langkah Ketiga, Menambahkan Watermark Pada Background Halaman Web
+Nah, disini kalian bisa membuat watermark sesuai keinginan. Bisa berbentuk tulisan ataupun gambar.
+
+## Watermark halaman berbentuk tulisan
+Untuk scriptnya seperti dibawah ini:
+
+```<div class="watermark">...</div>```
+
+Dimana, titik-titik diatas diisi dengan teks sesuai keinginan.<br>
+
+## Watermark halaman berbentuk gambar
+Sedangkan untuk gambar seperti dibawah ini:
+
+```<div class="watermark"><img src="..."></div>```
+
+
+Dimana, titik-titik diatas diisi dengan nama gambar yang telah dimasukkan ke dalam proyek.<br>
+
+# Langkah Keempat, Membuat Watermark Pada Gambar
+Yaitu dengan cara memanggil library(magick).<br>
+
+```{r}
+library(magick)
+```
+
+Lalu, menampilkan gambar dengan cara:<br>
+
+```{r}
+img <- image_read("C:/Users/herib/OneDrive/Pictures/UIN-Malang.jpg")
+print(img)
+```
+
+Dan terakhir, menciptakan watermarknya:<br>
+
+```{r}
+magick::image_annotate(img, "UIN MALANG", size = 100, gravity = "northwest", location = "+175+300",degrees = -30, color = "transparent", strokecolor = "#00000050", boxcolor = NULL)
+```
+

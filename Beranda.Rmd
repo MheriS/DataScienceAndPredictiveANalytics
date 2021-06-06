@@ -1,0 +1,19 @@
+---
+title: "Menambahkan Watermark Pada Gambar/Logo"
+author: "Moh. Heri Susanto | UIN Maulana Malik Ibrahim Malang | Teknik Informatika | Dosen Pengampu: Prof. Dr. Suhartono, M.Kom"
+date: "19 April 2021"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    toc_depth: 3
+    theme: united
+    highlight: tango
+    number_sections: true
+    css: filewatermark.css
+---
+<div class="watermark"><img src="UIN-Malang.jpg"></div>
+Assalamu'alaikum Wr.Wb.
+Dipertemuan kali ini saya akan memperkenalkan kalian tentang Watermark. Apasih "watermark" itu? Watermark ialah sebuah penerapan identitas terhadap suatu karya gambar/logo agar dipercayai keoriginalannya.<br> Nah, seperti gambar dibawah ini
+![](https://th.bing.com/th/id/R3c9a525bed62c6704846b8de98786b2e?rik=hkNZVfTI8%2f2PPA&riu=http%3a%2f%2f3.bp.blogspot.com%2f-a3kTzf-PDsk%2fUt8MV4ZesaI%2fAAAAAAAAmyc%2fhX4xNwrunoU%2fs1600%2fbm-image-797800.jpeg&ehk=IB%2bL70NysUVWJCZ5U69Zp6A%2f2Blk0aX5HSYBPH6Xymc%3d&risl=&pid=ImgRaw)<br>
+Untuk mengetahuinya secara mendalam, yuk silahkan masuk ke pages Materi:)))
